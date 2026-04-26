@@ -24,13 +24,13 @@ export function AppNav() {
             key={link.href}
             href={link.href}
             className={cn(
-              "group relative flex h-11 items-center gap-2 px-4 text-sm transition hover:bg-white/10 hover:text-warm-white",
+              "group relative flex h-11 items-center gap-2 px-4 text-sm font-normal lowercase tracking-[-0.02em] transition hover:border-warm-white hover:bg-surface-2 hover:text-warm-white",
               active ? "bg-sun-orange text-near-black" : "text-ash-muted",
             )}
           >
             <Glyph name={link.icon} size="sm" />
-            {link.label}
-            <span className={cn("absolute inset-x-4 -bottom-1 h-px bg-sun-orange transition", active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} />
+            {link.label.toLowerCase()}
+            <span className={cn("absolute inset-x-4 -bottom-1 h-px bg-warm-white transition", active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} />
           </Link>
         );
       })}

@@ -54,10 +54,10 @@ export default function OnboardingPage() {
       <Mountains />
       <section className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 flex items-center justify-between">
-          <p className="text-lg font-semibold">Ascend</p>
+          <p className="text-lg font-normal lowercase tracking-[-0.02em]">ascend</p>
           <div className="flex gap-2">
             {steps.map((item, index) => (
-              <div key={item} className={`h-2 w-14 ${index <= step ? "bg-warm-white" : "bg-white/25"}`} />
+              <div key={item} className={`h-2 w-14 border border-ember-line ${index <= step ? "bg-warm-white" : "bg-surface-2"}`} />
             ))}
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function OnboardingPage() {
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-sun-orange">{steps[step]}</p>
           {step === 0 && (
             <div className="mt-5 grid gap-5">
-              <h1 className="text-4xl font-semibold md:text-6xl">What future are you trying to reach?</h1>
+              <h1 className="text-4xl font-normal lowercase leading-none tracking-[-0.02em] md:text-6xl">what future are you trying to reach?</h1>
               <EngineStrip
                 items={[
                   { icon: "target", label: "Goal", value: "Be specific enough for the AI graph to make real quests" },

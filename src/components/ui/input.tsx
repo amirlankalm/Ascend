@@ -5,7 +5,7 @@ export function Input({ className, ...props }: InputHTMLAttributes<HTMLInputElem
   return (
     <input
       className={cn(
-        "pixel-frame h-12 w-full border border-ember-line bg-black/24 px-4 text-sm text-warm-white outline-none transition placeholder:text-ash-muted/70 focus:border-warm-white/70",
+        "pixel-frame h-12 w-full border border-ember-line bg-surface px-4 text-sm font-normal text-warm-white outline-none transition placeholder:text-tertiary focus:border-warm-white",
         className,
       )}
       {...props}
@@ -17,7 +17,7 @@ export function Textarea({ className, ...props }: TextareaHTMLAttributes<HTMLTex
   return (
     <textarea
       className={cn(
-        "pixel-frame min-h-32 w-full border border-ember-line bg-black/24 px-4 py-3 text-sm leading-6 text-warm-white outline-none transition placeholder:text-ash-muted/70 focus:border-warm-white/70",
+        "pixel-frame min-h-32 w-full border border-ember-line bg-surface px-4 py-3 text-sm leading-6 text-warm-white outline-none transition placeholder:text-tertiary focus:border-warm-white",
         className,
       )}
       {...props}

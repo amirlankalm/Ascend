@@ -73,7 +73,7 @@ export function Glyph({
           key={`${name}-${index}`}
           className={cn(
             "block min-h-0 min-w-0 transition",
-            cell === "1" ? "bg-current shadow-[0_0_10px_currentColor]" : "bg-transparent",
+            cell === "1" ? "bg-current" : "bg-transparent",
           )}
         />
       ))}
