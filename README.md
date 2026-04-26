@@ -551,6 +551,20 @@ Protected by:
 CRON_SECRET
 ```
 
+### `GET /api/health`
+
+Returns a lightweight operational status payload.
+
+It reports:
+
+- app status
+- current runtime mode
+- Supabase env readiness
+- OpenAI env readiness
+- cron secret readiness
+
+This is useful for quick deployment smoke checks.
+
 ## Visual Design
 
 The design direction is documented in:
