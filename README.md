@@ -575,14 +575,15 @@ DESIGN.md
 
 The current visual system is:
 
-- cinematic orange mountain atmosphere
-- dark expedition-map dashboard
-- pixelated sun and scanline texture
-- stepped mountain silhouettes
+- monochrome dark technical substrate
+- strictly monospace typography
+- hard 1px borders and square controls
+- pixelated glyphs and dither texture
+- flat stepped silhouettes
 - custom pixel glyph icons
-- pixel-frame UI panels
+- notched pixel-frame UI panels
 - radar/mission/engine language
-- large frontier typography
+- large lowercase terminal typography
 
 The goal is for Ascend to feel like:
 

@@ -56,8 +56,8 @@ export function OpportunityRadar() {
       <div className="grid gap-5 lg:grid-cols-[1fr_380px] lg:items-end">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.24em] text-sun-orange">Opportunity engine / live scan</p>
-          <h1 className="mt-4 max-w-4xl text-[clamp(3rem,7vw,6.7rem)] font-semibold leading-[0.95]">
-            Your future signals, ranked.
+          <h1 className="mt-4 max-w-4xl text-[clamp(3rem,7vw,6.7rem)] font-normal lowercase leading-[0.95] tracking-[-0.02em]">
+            your future signals, ranked.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-ash-muted">
             Ascend reads validated proof, graph unlocks, and founder direction, then turns them into application moves.
@@ -73,11 +73,11 @@ export function OpportunityRadar() {
           </div>
         </div>
         <div className="terrain-panel pixel-frame overflow-hidden p-5">
-          <div className="relative mx-auto grid aspect-square max-w-[260px] place-items-center rounded-full border border-ember-line bg-black/32">
-            <div className="absolute inset-4 rounded-full border border-sun-orange/20" />
-            <div className="absolute inset-12 rounded-full border border-sun-orange/20" />
-            <div className="absolute left-1/2 top-0 h-1/2 w-px origin-bottom animate-spin bg-gradient-to-t from-sun-orange to-transparent" />
-            <Glyph name="radar" size="xl" className="text-sun-orange" />
+          <div className="relative mx-auto grid aspect-square max-w-[260px] place-items-center border border-ember-line bg-surface-3">
+            <div className="absolute inset-4 border border-border-soft" />
+            <div className="absolute inset-12 border border-border-soft" />
+            <div className="absolute left-1/2 top-0 h-1/2 w-px origin-bottom animate-spin bg-warm-white" />
+            <Glyph name="radar" size="xl" className="text-warm-white" />
           </div>
           <Button onClick={refresh} className="mt-5 w-full">
             <Glyph name="scan" size="sm" />
@@ -94,7 +94,7 @@ export function OpportunityRadar() {
           <button
             key={key}
             onClick={() => setFilter(key as "all" | "ready" | "urgent")}
-            className={`pixel-chip px-4 py-2 text-sm transition ${filter === key ? "bg-sun-orange text-near-black" : "text-ash-muted hover:bg-white/10 hover:text-warm-white"}`}
+            className={`pixel-chip px-4 py-2 text-sm lowercase transition ${filter === key ? "bg-sun-orange text-near-black" : "text-ash-muted hover:bg-surface-2 hover:text-warm-white"}`}
           >
             {label}
           </button>
@@ -112,10 +112,10 @@ export function OpportunityRadar() {
           <article key={match.id} className="terrain-panel pixel-frame pixel-border overflow-hidden p-0">
             <div className="grid gap-0 lg:grid-cols-[190px_1fr_280px]">
               <div className="relative min-h-44 border-b border-ember-line p-5 lg:border-b-0 lg:border-r">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(245,164,0,0.18),transparent_48%)]" />
-                <div className="relative grid h-28 w-28 place-items-center rounded-full border border-sun-orange/60 bg-sun-orange/10 font-mono text-4xl text-sun-orange">
+                <div className="absolute inset-0 border-r border-border-soft" />
+                <div className="relative grid h-28 w-28 place-items-center border border-warm-white bg-surface font-mono text-4xl text-warm-white">
                   {match.matchScore}
-                  <span className="absolute -bottom-2 rounded-full border border-ember-line bg-near-black px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ash-muted">
+                  <span className="absolute -bottom-2 border border-ember-line bg-near-black px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ash-muted">
                     match
                   </span>
                 </div>
@@ -130,9 +130,9 @@ export function OpportunityRadar() {
                     {match.opportunity.countryRegion}
                   </span>
                 </div>
-                <h2 className="mt-4 max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">{match.opportunity.title}</h2>
+                <h2 className="mt-4 max-w-2xl text-3xl font-normal lowercase leading-tight tracking-[-0.02em] md:text-4xl">{match.opportunity.title}</h2>
                 <p className="mt-4 max-w-3xl text-base leading-7 text-ash-muted">{match.reason}</p>
-                <div className="pixel-frame mt-5 border border-ember-line bg-black/24 p-4">
+                <div className="pixel-frame mt-5 border border-ember-line bg-surface-3 p-4">
                   <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-sun-orange">
                     <Glyph name="target" size="xs" />
                     Next unlock action
@@ -146,7 +146,7 @@ export function OpportunityRadar() {
                     <Glyph name="clock" size="xs" />
                     Deadline
                   </p>
-                  <p className="mt-2 text-2xl font-semibold">{match.opportunity.deadline}</p>
+                  <p className="mt-2 text-2xl font-normal">{match.opportunity.deadline}</p>
                   <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.16em]">Amount</p>
                   <p className="mt-1 text-sm">{match.opportunity.amount}</p>
                 </div>
@@ -157,7 +157,7 @@ export function OpportunityRadar() {
                   </p>
                   <ul className="mt-3 space-y-2 text-sm leading-6 text-ash-muted">
                     {match.missingRequirements.map((item) => (
-                      <li key={item} className="border-l border-sun-orange/50 pl-3">{item}</li>
+                      <li key={item} className="border-l border-warm-white/50 pl-3">{item}</li>
                     ))}
                   </ul>
                 </div>

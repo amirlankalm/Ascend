@@ -30,9 +30,9 @@ export function PathGraph({ graph }: { graph: ProgressGraph }) {
         source: edge.source,
         target: edge.target,
         animated: true,
-        markerEnd: { type: MarkerType.ArrowClosed, color: "#F5A400" },
+        markerEnd: { type: MarkerType.ArrowClosed, color: "#EDEDED" },
         style: {
-          stroke: edge.relation === "funds" ? "#FFF7EA" : "#F5A400",
+          stroke: edge.relation === "funds" ? "#F5F5F5" : "#A1A1AA",
           strokeWidth: edge.weight > 0.9 ? 2.2 : 1.5,
           opacity: 0.84,
         },
@@ -58,8 +58,8 @@ export function PathGraph({ graph }: { graph: ProgressGraph }) {
         onNodeClick={onNodeClick}
         proOptions={{ hideAttribution: true }}
       >
-        <Background color="rgba(255,196,112,0.18)" gap={48} />
-        <Controls className="!border !border-ember-line !bg-black/40 !text-warm-white" />
+        <Background color="rgba(161,161,170,0.16)" gap={48} />
+        <Controls className="!border !border-ember-line !bg-surface !text-warm-white" />
       </ReactFlow>
       {selected && (
         <motion.aside
@@ -70,9 +70,9 @@ export function PathGraph({ graph }: { graph: ProgressGraph }) {
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-sun-orange">{selected.type}</p>
-              <h2 className="mt-2 text-2xl font-semibold">{selected.title}</h2>
+              <h2 className="mt-2 text-2xl font-normal lowercase tracking-[-0.02em]">{selected.title}</h2>
             </div>
-            <button className="pixel-frame border border-ember-line p-2 text-sun-orange transition hover:bg-white/10" onClick={() => setSelected(null)} aria-label="Close node detail">
+            <button className="pixel-frame border border-ember-line p-2 text-warm-white transition hover:bg-warm-white hover:text-near-black" onClick={() => setSelected(null)} aria-label="Close node detail">
               <Glyph name="close" size="sm" />
             </button>
           </div>
@@ -108,9 +108,9 @@ export function PathGraph({ graph }: { graph: ProgressGraph }) {
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="pixel-frame border border-ember-line bg-black/26 p-3">
+    <div className="pixel-frame border border-ember-line bg-surface-3 p-3">
       <p className="font-mono text-[10px] uppercase text-ash-muted">{label}</p>
-      <p className="mt-1 text-sm font-semibold">{value}</p>
+      <p className="mt-1 text-sm font-normal text-warm-white">{value}</p>
     </div>
   );
 }

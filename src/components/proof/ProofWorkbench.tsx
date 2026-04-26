@@ -88,7 +88,7 @@ export function ProofWorkbench({ questId }: { questId: string }) {
     <section className="mx-auto grid max-w-6xl gap-6 px-5 pb-16 pt-8 lg:grid-cols-[1fr_390px]">
       <div className="terrain-panel pixel-frame pixel-border p-6 md:p-8">
         <p className="font-mono text-xs uppercase tracking-[0.24em] text-sun-orange">Proof engine / validation bay</p>
-        <h1 className="mt-4 text-[clamp(3rem,7vw,6.2rem)] font-semibold leading-[0.95]">Submit evidence</h1>
+        <h1 className="mt-4 text-[clamp(3rem,7vw,6.2rem)] font-normal lowercase leading-[0.95] tracking-[-0.02em]">submit evidence</h1>
         <p className="mt-4 max-w-2xl leading-7 text-ash-muted">{quest.expectedOutput}</p>
         <div className="mt-6">
           <EngineStrip
@@ -113,7 +113,7 @@ export function ProofWorkbench({ questId }: { questId: string }) {
               File upload wired to Supabase Storage
             </Button>
           </div>
-          {error && <div className="pixel-frame border border-red-300/40 bg-red-500/10 p-4 text-sm leading-6 text-red-100">{error}</div>}
+          {error && <div className="pixel-frame border border-warm-white bg-surface-3 p-4 text-sm leading-6 text-warm-white">{error}</div>}
           <Button onClick={submitProof} disabled={loading || textProof.trim().length < 80}>
             <Glyph name="scan" size="sm" />
             {loading ? loadingSteps[step] : "Validate proof"}
@@ -134,7 +134,7 @@ export function ProofWorkbench({ questId }: { questId: string }) {
               );
             })}
           </div>
-          <div className="mt-5 h-2 bg-black/40">
+          <div className="mt-5 h-2 border border-ember-line bg-surface-3">
             <div className="h-full bg-sun-orange transition-all" style={{ width: `${readiness}%` }} />
           </div>
         </div>
@@ -147,12 +147,12 @@ export function ProofWorkbench({ questId }: { questId: string }) {
               exit={{ opacity: 0, y: -12 }}
               className="terrain-panel pixel-frame p-5"
             >
-              <div className="grid h-14 w-14 place-items-center border border-ember-line bg-hot-orange/20 text-sun-orange">
+              <div className="grid h-14 w-14 place-items-center border border-ember-line bg-surface-2 text-warm-white">
                 <Glyph name="scan" size="lg" className="animate-pulse" />
               </div>
-              <p className="mt-5 text-xl font-semibold">{loadingSteps[step]}</p>
-              <div className="mt-5 h-2 overflow-hidden rounded-full bg-black/40">
-                <div className="h-full rounded-full bg-sun-orange transition-all" style={{ width: `${(step + 1) * 25}%` }} />
+              <p className="mt-5 text-xl font-normal lowercase tracking-[-0.02em]">{loadingSteps[step]}</p>
+              <div className="mt-5 h-2 overflow-hidden border border-ember-line bg-surface-3">
+                <div className="h-full bg-sun-orange transition-all" style={{ width: `${(step + 1) * 25}%` }} />
               </div>
             </motion.div>
           )}
@@ -160,7 +160,7 @@ export function ProofWorkbench({ questId }: { questId: string }) {
             <motion.div key="result" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
               <div className="pixel-frame border border-warm-white/60 bg-warm-white p-5 text-near-black">
                 <Glyph name={result.validation.passed ? "check" : "close"} size="lg" />
-                <h2 className="mt-3 text-2xl font-semibold">{result.validation.passed ? "Proof passed" : "Needs another pass"}</h2>
+                <h2 className="mt-3 text-2xl font-normal lowercase tracking-[-0.02em]">{result.validation.passed ? "proof passed" : "needs another pass"}</h2>
                 <p className="mt-2 leading-6">{result.validation.feedback}</p>
               </div>
               <div className="terrain-panel pixel-frame p-5">
@@ -174,7 +174,7 @@ export function ProofWorkbench({ questId }: { questId: string }) {
               {result.validation.passed && (
                 <div className="terrain-panel pixel-frame p-5">
                   <p className="font-mono text-xs uppercase text-sun-orange">Portfolio generated</p>
-                  <h3 className="mt-2 text-xl font-semibold">{result.portfolio.title}</h3>
+                  <h3 className="mt-2 text-xl font-normal lowercase tracking-[-0.02em]">{result.portfolio.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-ash-muted">{result.portfolio.cvBullet}</p>
                   <div className="mt-4 flex gap-3">
                     <Button onClick={() => router.push("/dashboard/graph")}>View unlocks</Button>
@@ -195,9 +195,9 @@ export function ProofWorkbench({ questId }: { questId: string }) {
 
 function Score({ label, value }: { label: string; value: number }) {
   return (
-    <div className="pixel-frame border border-ember-line bg-black/24 p-4">
+    <div className="pixel-frame border border-ember-line bg-surface-3 p-4">
       <p className="font-mono text-[10px] uppercase text-ash-muted">{label}</p>
-      <p className="mt-2 text-2xl font-semibold">{value}</p>
+      <p className="mt-2 text-2xl font-normal">{value}</p>
     </div>
   );
 }

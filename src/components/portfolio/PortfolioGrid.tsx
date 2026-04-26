@@ -24,7 +24,7 @@ export function PortfolioGrid() {
   return (
     <section className="mx-auto max-w-7xl px-5 pb-16 pt-8">
       <p className="font-mono text-xs uppercase tracking-[0.24em] text-sun-orange">Portfolio engine / signal forge</p>
-      <h1 className="mt-4 max-w-4xl text-[clamp(3rem,7vw,6.4rem)] font-semibold leading-[0.95]">Proof becomes public signal.</h1>
+      <h1 className="mt-4 max-w-4xl text-[clamp(3rem,7vw,6.4rem)] font-normal lowercase leading-[0.95] tracking-[-0.02em]">proof becomes public signal.</h1>
       <div className="mt-7">
         <EngineStrip
           items={[
@@ -41,12 +41,12 @@ export function PortfolioGrid() {
           ) : (
             items.map((item) => (
               <article key={item.id} className="pixel-frame pixel-border relative overflow-hidden border border-ember-line bg-warm-white p-6 text-near-black">
-                <div className="absolute right-0 top-0 h-28 w-28 bg-[linear-gradient(135deg,rgba(216,74,0,0.18),transparent)]" />
+                <div className="absolute right-0 top-0 h-28 w-28 border-l border-b border-near-black/20" />
                 <div className="flex items-start justify-between gap-4">
                   <Glyph name="portfolio" size="lg" />
                   <div className="font-mono text-xs">{item.impactScore} impact</div>
                 </div>
-                <h2 className="mt-5 text-2xl font-semibold">{item.title}</h2>
+                <h2 className="mt-5 text-2xl font-normal lowercase tracking-[-0.02em]">{item.title}</h2>
                 <p className="mt-3 leading-7">{item.summary}</p>
                 <div className="pixel-frame mt-5 bg-near-black p-4 text-warm-white">
                   <p className="font-mono text-[10px] uppercase text-sun-orange">CV bullet</p>
@@ -76,7 +76,7 @@ export function PortfolioGrid() {
           )}
         </div>
         <aside className="terrain-panel pixel-frame p-5">
-          <h2 className="text-xl font-semibold">Accumulated skills</h2>
+          <h2 className="text-xl font-normal lowercase tracking-[-0.02em]">accumulated skills</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {skills.length ? skills.map((skill) => <span key={skill} className="pixel-chip px-3 py-1 text-xs text-ash-muted">{skill}</span>) : <p className="text-sm text-ash-muted">No validated skills yet.</p>}
           </div>
