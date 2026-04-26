@@ -733,12 +733,16 @@ Production alias:
 
 ```bash
 npm run dev
+npm run check:env
 npm run lint
 npm run build
+npm run verify
 npm run start
 ```
 
 Use `npm run lint` and `npm run build` before pushing.
+
+GitHub Actions runs the same lint/build checks on pushes and pull requests to `main`.
 
 ## Acceptance Checklist
 
