@@ -1,0 +1,28 @@
+export function Mountains({ subtle = false }: { subtle?: boolean }) {
+  return (
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[56%] overflow-hidden" aria-hidden="true">
+      <div
+        className="absolute inset-x-[-8%] bottom-[28%] h-[52%] opacity-45 blur-[1px]"
+        style={{
+          background: "linear-gradient(180deg, rgba(138,42,0,0.16), rgba(58,19,6,0.62))",
+          clipPath: "polygon(0 80%, 6% 80%, 6% 68%, 10% 68%, 10% 54%, 16% 54%, 16% 62%, 22% 62%, 22% 50%, 30% 50%, 30% 28%, 36% 28%, 36% 48%, 42% 48%, 42% 70%, 50% 70%, 50% 54%, 55% 54%, 55% 36%, 62% 36%, 62% 52%, 68% 52%, 68% 66%, 76% 66%, 76% 46%, 82% 46%, 82% 24%, 90% 24%, 90% 56%, 100% 56%, 100% 100%, 0 100%)",
+          transform: subtle ? "translateY(18%)" : undefined,
+        }}
+      />
+      <div
+        className="absolute inset-x-[-4%] bottom-[12%] h-[58%] opacity-75"
+        style={{
+          background: "linear-gradient(180deg, rgba(138,42,0,0.28), rgba(58,19,6,0.9))",
+          clipPath: "polygon(0 78%, 6% 78%, 6% 58%, 10% 58%, 10% 40%, 16% 40%, 16% 52%, 20% 52%, 20% 64%, 28% 64%, 28% 42%, 34% 42%, 34% 20%, 42% 20%, 42% 50%, 48% 50%, 48% 72%, 54% 72%, 54% 54%, 59% 54%, 59% 38%, 66% 38%, 66% 54%, 76% 54%, 76% 70%, 84% 70%, 84% 48%, 90% 48%, 90% 30%, 96% 30%, 96% 60%, 100% 60%, 100% 100%, 0 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-x-[-2%] bottom-[-2%] h-[46%]"
+        style={{
+          background: "linear-gradient(180deg, #4a1607 0%, #210905 42%, #070707 100%)",
+          clipPath: "polygon(0 56%, 6% 56%, 6% 44%, 11% 44%, 11% 30%, 18% 30%, 18% 46%, 22% 46%, 22% 58%, 28% 58%, 28% 42%, 34% 42%, 34% 24%, 40% 24%, 40% 48%, 44% 48%, 44% 62%, 52% 62%, 52% 38%, 58% 38%, 58% 18%, 64% 18%, 64% 42%, 69% 42%, 69% 54%, 76% 54%, 76% 40%, 82% 40%, 82% 26%, 90% 26%, 90% 42%, 100% 42%, 100% 100%, 0 100%)",
+        }}
+      />
+    </div>
+  );
+}
