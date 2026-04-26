@@ -34,7 +34,7 @@ Hierarchy comes from contrast, grayscale values, visible grid structure, generou
 - `border-soft`: `#2A2A2A`
 - `inverse`: `#0A0A0A`
 
-Legacy token names such as `sun-orange`, `warm-white`, and `ember-line` are mapped to monochrome values in `globals.css` so existing components stay stable while the visual language changes.
+No warm/orange/accent token names should be used for new UI. The app surface is plain off-black, and status is communicated through white/gray contrast only.
 
 ## 4. Typography Scale
 - Font: Geist Mono everywhere.
@@ -90,4 +90,4 @@ Legacy token names such as `sun-orange`, `warm-white`, and `ember-line` are mapp
 - Use `bg-background`, `bg-surface`, `text-warm-white`, `text-ash-muted`, and `border-ember-line`.
 - Avoid new color tokens unless they are grayscale.
 - Do not add gradients, shadows, blur, or rounded corners.
-- Preserve pixel glyphs, SVG-pattern grid backgrounds, and notched square frames for the custom Ascend identity.
+- Preserve pixel glyphs and notched square frames for the custom Ascend identity, but do not use decorative grid-square backgrounds.

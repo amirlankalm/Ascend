@@ -87,7 +87,7 @@ export function ProofWorkbench({ questId }: { questId: string }) {
   return (
     <section className="mx-auto grid max-w-6xl gap-6 px-5 pb-16 pt-8 lg:grid-cols-[1fr_390px]">
       <div className="terrain-panel pixel-frame pixel-border p-6 md:p-8">
-        <p className="font-mono text-xs uppercase tracking-[0.24em] text-sun-orange">Proof engine / validation bay</p>
+        <p className="font-mono text-xs uppercase tracking-[0.24em] text-warm-white">Proof engine / validation bay</p>
         <h1 className="mt-4 text-[clamp(3rem,7vw,6.2rem)] font-normal lowercase leading-[0.95] tracking-[-0.02em]">submit evidence</h1>
         <p className="mt-4 max-w-2xl leading-7 text-ash-muted">{quest.expectedOutput}</p>
         <div className="mt-6">
@@ -122,20 +122,20 @@ export function ProofWorkbench({ questId }: { questId: string }) {
       </div>
       <aside className="space-y-4">
         <div className="terrain-panel pixel-frame p-5">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-sun-orange">Preflight checks</p>
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-warm-white">Preflight checks</p>
           <div className="mt-4 space-y-3">
             {proofChecks.map((check) => {
               const passed = check.test(textProof);
               return (
                 <div key={check.label} className="flex items-center justify-between gap-3 border-b border-ember-line/40 pb-2">
                   <span className="text-sm text-ash-muted">{check.label}</span>
-                  <Glyph name={passed ? "check" : "close"} size="sm" className={passed ? "text-sun-orange" : "text-ash-muted/50"} />
+                  <Glyph name={passed ? "check" : "close"} size="sm" className={passed ? "text-warm-white" : "text-ash-muted/50"} />
                 </div>
               );
             })}
           </div>
           <div className="mt-5 h-2 border border-ember-line bg-surface-3">
-            <div className="h-full bg-sun-orange transition-all" style={{ width: `${readiness}%` }} />
+            <div className="h-full bg-warm-white transition-all" style={{ width: `${readiness}%` }} />
           </div>
         </div>
         <AnimatePresence mode="wait">
@@ -152,7 +152,7 @@ export function ProofWorkbench({ questId }: { questId: string }) {
               </div>
               <p className="mt-5 text-xl font-normal lowercase tracking-[-0.02em]">{loadingSteps[step]}</p>
               <div className="mt-5 h-2 overflow-hidden border border-ember-line bg-surface-3">
-                <div className="h-full bg-sun-orange transition-all" style={{ width: `${(step + 1) * 25}%` }} />
+                <div className="h-full bg-warm-white transition-all" style={{ width: `${(step + 1) * 25}%` }} />
               </div>
             </motion.div>
           )}
@@ -173,7 +173,7 @@ export function ProofWorkbench({ questId }: { questId: string }) {
               </div>
               {result.validation.passed && (
                 <div className="terrain-panel pixel-frame p-5">
-                  <p className="font-mono text-xs uppercase text-sun-orange">Portfolio generated</p>
+                  <p className="font-mono text-xs uppercase text-warm-white">Portfolio generated</p>
                   <h3 className="mt-2 text-xl font-normal lowercase tracking-[-0.02em]">{result.portfolio.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-ash-muted">{result.portfolio.cvBullet}</p>
                   <div className="mt-4 flex gap-3">

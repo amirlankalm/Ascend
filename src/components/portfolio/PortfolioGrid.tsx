@@ -23,7 +23,7 @@ export function PortfolioGrid() {
 
   return (
     <section className="mx-auto max-w-7xl px-5 pb-16 pt-8">
-      <p className="font-mono text-xs uppercase tracking-[0.24em] text-sun-orange">Portfolio engine / signal forge</p>
+      <p className="font-mono text-xs uppercase tracking-[0.24em] text-warm-white">Portfolio engine / signal forge</p>
       <h1 className="mt-4 max-w-4xl text-[clamp(3rem,7vw,6.4rem)] font-normal lowercase leading-[0.95] tracking-[-0.02em]">proof becomes public signal.</h1>
       <div className="mt-7">
         <EngineStrip
@@ -49,7 +49,7 @@ export function PortfolioGrid() {
                 <h2 className="mt-5 text-2xl font-normal lowercase tracking-[-0.02em]">{item.title}</h2>
                 <p className="mt-3 leading-7">{item.summary}</p>
                 <div className="pixel-frame mt-5 bg-near-black p-4 text-warm-white">
-                  <p className="font-mono text-[10px] uppercase text-sun-orange">CV bullet</p>
+                  <p className="font-mono text-[10px] uppercase text-warm-white">CV bullet</p>
                   <p className="mt-2 text-sm leading-6">{item.cvBullet}</p>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -81,7 +81,7 @@ export function PortfolioGrid() {
             {skills.length ? skills.map((skill) => <span key={skill} className="pixel-chip px-3 py-1 text-xs text-ash-muted">{skill}</span>) : <p className="text-sm text-ash-muted">No validated skills yet.</p>}
           </div>
           <div className="mt-6 border-t border-ember-line pt-5">
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-sun-orange">Export pack</p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-warm-white">Export pack</p>
             <p className="mt-2 text-sm leading-6 text-ash-muted">Use these artifacts for CV bullets, scholarship essays, hackathon bios, and mentor updates.</p>
           </div>
         </aside>

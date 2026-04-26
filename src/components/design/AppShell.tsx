@@ -1,13 +1,10 @@
 import Link from "next/link";
 import { AppNav } from "@/components/design/AppNav";
 import { Glyph } from "@/components/design/Glyph";
-import { Mountains } from "./Mountains";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
-    <main className="night-map graph-grid relative min-h-screen overflow-hidden text-warm-white">
-      <Mountains subtle />
-      <div className="pixel-overlay opacity-20" aria-hidden="true" />
+    <main className="night-map relative min-h-screen overflow-hidden text-warm-white">
       <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-px bg-border" />
       <header className="relative z-20 grid min-h-24 grid-cols-[1fr_auto] items-center gap-4 px-5 md:grid-cols-[260px_1fr_auto] md:px-8">
         <Link href="/dashboard/graph" className="os-rail pixel-frame flex h-14 items-center gap-3 px-3">
@@ -22,14 +19,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <AppNav />
         <div className="flex items-center justify-end gap-2">
           <div className="os-rail pixel-frame hidden h-14 items-center gap-3 px-4 lg:flex">
-            <Glyph name="command" size="sm" className="text-sun-orange" />
+            <Glyph name="command" size="sm" className="text-warm-white" />
             <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ash-muted">Search</span>
             <kbd className="border border-ember-line px-1.5 py-0.5 font-mono text-[10px] text-warm-white">K</kbd>
           </div>
           <div className="os-rail pixel-frame grid h-14 w-14 place-items-center">
-            <Glyph name="bell" size="sm" className="text-sun-orange" />
+            <Glyph name="bell" size="sm" className="text-warm-white" />
           </div>
-          <div className="os-rail pixel-frame flex h-14 items-center gap-2 px-4 font-mono text-xs text-sun-orange">
+          <div className="os-rail pixel-frame flex h-14 items-center gap-2 px-4 font-mono text-xs text-warm-white">
             <Glyph name="bolt" size="sm" />
             XP 000
           </div>

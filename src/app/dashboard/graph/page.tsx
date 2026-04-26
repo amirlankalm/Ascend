@@ -25,7 +25,7 @@ export default function GraphDashboardPage() {
   return (
     <div className="relative">
       <div className="pointer-events-none absolute left-5 top-5 z-20 max-w-2xl md:left-8">
-        <p className="font-mono text-xs uppercase tracking-[0.24em] text-sun-orange">Path Engine / graph runtime</p>
+        <p className="font-mono text-xs uppercase tracking-[0.24em] text-warm-white">Path Engine / graph runtime</p>
         <h1 className="mt-2 text-4xl font-normal lowercase leading-none tracking-[-0.02em] md:text-7xl">{state.goal.targetRole}</h1>
         <p className="mt-3 hidden max-w-lg text-sm leading-6 text-ash-muted md:block">{state.graph.summary}</p>
         <div className="pointer-events-auto mt-5 hidden max-w-2xl md:block">

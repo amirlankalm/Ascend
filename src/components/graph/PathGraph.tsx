@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import { Background, Controls, MarkerType, ReactFlow, type Edge, type Node } from "@xyflow/react";
+import { Controls, MarkerType, ReactFlow, type Edge, type Node } from "@xyflow/react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Glyph } from "@/components/design/Glyph";
@@ -58,7 +58,6 @@ export function PathGraph({ graph }: { graph: ProgressGraph }) {
         onNodeClick={onNodeClick}
         proOptions={{ hideAttribution: true }}
       >
-        <Background color="rgba(161,161,170,0.16)" gap={48} />
         <Controls className="!border !border-ember-line !bg-surface !text-warm-white" />
       </ReactFlow>
       {selected && (
@@ -69,7 +68,7 @@ export function PathGraph({ graph }: { graph: ProgressGraph }) {
         >
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-sun-orange">{selected.type}</p>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-warm-white">{selected.type}</p>
               <h2 className="mt-2 text-2xl font-normal lowercase tracking-[-0.02em]">{selected.title}</h2>
             </div>
             <button className="pixel-frame border border-ember-line p-2 text-warm-white transition hover:bg-warm-white hover:text-near-black" onClick={() => setSelected(null)} aria-label="Close node detail">
@@ -83,7 +82,7 @@ export function PathGraph({ graph }: { graph: ProgressGraph }) {
             <Metric label="XP" value={`${selected.xp}`} />
           </div>
           <div className="mt-4 grid gap-2 border-t border-ember-line pt-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-sun-orange">Engine readout</p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-warm-white">Engine readout</p>
             <p className="text-sm leading-6 text-ash-muted">
               {selected.status === "locked"
                 ? "Locked until upstream proof is validated. Finish an available mission to open this route."

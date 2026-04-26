@@ -10,7 +10,7 @@ export function QuestMission({ quest }: { quest: Quest }) {
   return (
     <article className="mx-auto grid max-w-7xl gap-6 px-5 pb-16 pt-8 lg:grid-cols-[1fr_380px]">
       <section className="terrain-panel pixel-frame pixel-border p-6 md:p-8">
-        <p className="font-mono text-xs uppercase tracking-[0.24em] text-sun-orange">Quest engine / today’s mission</p>
+        <p className="font-mono text-xs uppercase tracking-[0.24em] text-warm-white">Quest engine / today’s mission</p>
         <h1 className="mt-4 max-w-4xl text-[clamp(3rem,7vw,6.4rem)] font-normal lowercase leading-[0.95] tracking-[-0.02em]">{quest.title}</h1>
         <p className="mt-5 max-w-2xl text-lg leading-8 text-ash-muted">{quest.whyItMatters}</p>
         <div className="mt-7">
@@ -39,7 +39,7 @@ export function QuestMission({ quest }: { quest: Quest }) {
         <div className="mt-6 grid gap-3 md:grid-cols-3">
           {["Name concrete examples", "Explain user + AI advantage", "Add one original local insight"].map((item, index) => (
             <div key={item} className="pixel-frame border border-ember-line bg-surface-3 p-4">
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-sun-orange">Proof block {index + 1}</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-warm-white">Proof block {index + 1}</p>
               <p className="mt-2 text-sm leading-6 text-ash-muted">{item}</p>
             </div>
           ))}
@@ -53,7 +53,7 @@ export function QuestMission({ quest }: { quest: Quest }) {
       </section>
       <aside className="space-y-4">
         <div className="terrain-panel pixel-frame p-5">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-sun-orange">Mission telemetry</p>
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-warm-white">Mission telemetry</p>
           <div className="mt-4 grid grid-cols-2 gap-3">
             <Stat icon="clock" label="Time" value={`${quest.timeEstimate} min`} />
             <Stat icon="bolt" label="Reward" value={`${quest.xpReward} XP`} />
@@ -83,7 +83,7 @@ export function QuestMission({ quest }: { quest: Quest }) {
           </div>
         </div>
         <div className="terrain-panel pixel-frame p-5">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-sun-orange">Proof template</p>
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-warm-white">Proof template</p>
           <div className="mt-4 space-y-3 text-sm leading-6 text-ash-muted">
             <p>1. Product or example name</p>
             <p>2. User problem and why it matters</p>

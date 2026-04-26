@@ -7,7 +7,6 @@ import { EngineStrip } from "@/components/design/EngineStrip";
 import { Glyph } from "@/components/design/Glyph";
 import { Button } from "@/components/ui/button";
 import { Input, Textarea } from "@/components/ui/input";
-import { Mountains } from "@/components/design/Mountains";
 import { saveState } from "@/lib/demo/storage";
 import type { GoalInput, PathfinderState, ProfileInput } from "@/types/pathfinder";
 
@@ -48,10 +47,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <main className="mountain-sky relative min-h-screen overflow-hidden px-5 py-8 text-warm-white">
-      <div className="pixel-sun" aria-hidden="true" />
-      <div className="pixel-overlay" aria-hidden="true" />
-      <Mountains />
+    <main className="app-surface relative min-h-screen overflow-hidden px-5 py-8 text-warm-white">
       <section className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 flex items-center justify-between">
           <p className="text-lg font-normal lowercase tracking-[-0.02em]">ascend</p>
@@ -62,7 +58,7 @@ export default function OnboardingPage() {
           </div>
         </div>
         <motion.div key={step} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="terrain-panel pixel-frame pixel-border p-6 md:p-10">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-sun-orange">{steps[step]}</p>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-warm-white">{steps[step]}</p>
           {step === 0 && (
             <div className="mt-5 grid gap-5">
               <h1 className="text-4xl font-normal lowercase leading-none tracking-[-0.02em] md:text-6xl">what future are you trying to reach?</h1>

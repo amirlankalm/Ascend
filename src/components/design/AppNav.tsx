@@ -25,7 +25,7 @@ export function AppNav() {
             href={link.href}
             className={cn(
               "group relative flex h-11 items-center gap-2 px-4 text-sm font-normal lowercase tracking-[-0.02em] transition hover:border-warm-white hover:bg-surface-2 hover:text-warm-white",
-              active ? "bg-sun-orange text-near-black" : "text-ash-muted",
+              active ? "bg-warm-white text-near-black" : "text-ash-muted",
             )}
           >
             <Glyph name={link.icon} size="sm" />

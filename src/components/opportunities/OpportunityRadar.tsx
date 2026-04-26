@@ -55,7 +55,7 @@ export function OpportunityRadar() {
     <section className="mx-auto max-w-7xl px-5 pb-16 pt-8">
       <div className="grid gap-5 lg:grid-cols-[1fr_380px] lg:items-end">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-sun-orange">Opportunity engine / live scan</p>
+          <p className="font-mono text-xs uppercase tracking-[0.24em] text-warm-white">Opportunity engine / live scan</p>
           <h1 className="mt-4 max-w-4xl text-[clamp(3rem,7vw,6.7rem)] font-normal lowercase leading-[0.95] tracking-[-0.02em]">
             your future signals, ranked.
           </h1>
@@ -76,7 +76,7 @@ export function OpportunityRadar() {
           <div className="relative mx-auto grid aspect-square max-w-[260px] place-items-center border border-ember-line bg-surface-3">
             <div className="absolute inset-4 border border-border-soft" />
             <div className="absolute inset-12 border border-border-soft" />
-            <div className="absolute left-1/2 top-0 h-1/2 w-px origin-bottom animate-spin bg-warm-white" />
+            <div className="absolute left-1/2 top-0 h-1/2 w-px bg-warm-white" />
             <Glyph name="radar" size="xl" className="text-warm-white" />
           </div>
           <Button onClick={refresh} className="mt-5 w-full">
@@ -94,7 +94,7 @@ export function OpportunityRadar() {
           <button
             key={key}
             onClick={() => setFilter(key as "all" | "ready" | "urgent")}
-            className={`pixel-chip px-4 py-2 text-sm lowercase transition ${filter === key ? "bg-sun-orange text-near-black" : "text-ash-muted hover:bg-surface-2 hover:text-warm-white"}`}
+            className={`pixel-chip px-4 py-2 text-sm lowercase transition ${filter === key ? "bg-warm-white text-near-black" : "text-ash-muted hover:bg-surface-2 hover:text-warm-white"}`}
           >
             {label}
           </button>
@@ -104,7 +104,7 @@ export function OpportunityRadar() {
         {!state && <div className="terrain-panel pixel-frame p-8 text-ash-muted">Loading opportunity radar...</div>}
         {state && filteredMatches.length === 0 && (
           <div className="terrain-panel pixel-frame p-8">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-sun-orange">No signals in this lane</p>
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-warm-white">No signals in this lane</p>
             <p className="mt-3 max-w-xl text-ash-muted">Complete another quest or refresh matches after portfolio proof is generated.</p>
           </div>
         )}
@@ -123,7 +123,7 @@ export function OpportunityRadar() {
               </div>
               <div className="p-5 md:p-7">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="pixel-chip px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-sun-orange">
+                  <span className="pixel-chip px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-warm-white">
                     {match.opportunity.provider}
                   </span>
                   <span className="pixel-chip px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ash-muted">
@@ -133,7 +133,7 @@ export function OpportunityRadar() {
                 <h2 className="mt-4 max-w-2xl text-3xl font-normal lowercase leading-tight tracking-[-0.02em] md:text-4xl">{match.opportunity.title}</h2>
                 <p className="mt-4 max-w-3xl text-base leading-7 text-ash-muted">{match.reason}</p>
                 <div className="pixel-frame mt-5 border border-ember-line bg-surface-3 p-4">
-                  <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-sun-orange">
+                  <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-warm-white">
                     <Glyph name="target" size="xs" />
                     Next unlock action
                   </p>
@@ -151,7 +151,7 @@ export function OpportunityRadar() {
                   <p className="mt-1 text-sm">{match.opportunity.amount}</p>
                 </div>
                 <div className="mt-4">
-                  <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-sun-orange">
+                  <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-warm-white">
                     <Glyph name="proof" size="xs" />
                     Missing proof
                   </p>

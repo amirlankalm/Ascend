@@ -1,13 +1,10 @@
 import Link from "next/link";
 import { Glyph, type GlyphName } from "@/components/design/Glyph";
 import { Button } from "@/components/ui/button";
-import { Mountains } from "@/components/design/Mountains";
 
 export default function Home() {
   return (
-    <main className="mountain-sky relative min-h-screen overflow-hidden text-warm-white">
-      <div className="pixel-sun" aria-hidden="true" />
-      <div className="pixel-overlay" aria-hidden="true" />
+    <main className="app-surface relative min-h-screen overflow-hidden text-warm-white">
       <header className="relative z-10 flex h-24 items-center justify-between border-b border-ember-line px-6 md:px-24">
         <Link href="/" className="text-lg font-normal lowercase tracking-[-0.02em]">
           ascend
@@ -61,7 +58,6 @@ export default function Home() {
           </div>
         ))}
       </section>
-      <Mountains />
     </main>
   );
 }

@@ -9,7 +9,7 @@ export function EngineStrip({
     <div className="grid gap-px border border-ember-line bg-border md:grid-cols-3">
       {items.map((item) => (
         <div key={item.label} className="bg-surface p-4">
-          <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-sun-orange">
+          <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-warm-white">
             <Glyph name={item.icon} size="xs" />
             {item.label}
           </p>
