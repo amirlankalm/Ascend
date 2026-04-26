@@ -16,7 +16,7 @@ export function AppNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="os-rail pixel-frame mx-auto hidden h-14 items-center gap-1 p-1 md:flex">
+    <nav className="os-rail pixel-frame fixed inset-x-3 bottom-3 z-40 flex h-14 items-center justify-center gap-1 p-1 md:static md:mx-auto">
       {links.map((link) => {
         const active = pathname.startsWith(link.href.split("/").slice(0, 3).join("/"));
         return (
@@ -24,7 +24,7 @@ export function AppNav() {
             key={link.href}
             href={link.href}
             className={cn(
-              "group relative flex h-11 items-center gap-2 px-4 text-sm font-normal lowercase tracking-[-0.02em] transition hover:border-warm-white hover:bg-surface-2 hover:text-warm-white",
+              "group relative flex h-11 items-center gap-2 px-3 text-xs font-normal lowercase tracking-[-0.02em] transition hover:border-warm-white hover:bg-surface-2 hover:text-warm-white md:px-4 md:text-sm",
               active ? "bg-warm-white text-near-black" : "text-ash-muted",
             )}
           >

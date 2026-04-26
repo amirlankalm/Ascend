@@ -64,14 +64,22 @@ export function PathGraph({ graph }: { graph: ProgressGraph }) {
         <motion.aside
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
-          className="terrain-panel pixel-frame pixel-border absolute right-5 top-5 z-20 w-[min(420px,calc(100vw-40px))] p-5"
+          className="terrain-panel pixel-frame pixel-border fixed inset-x-4 bottom-24 z-50 max-h-[55dvh] overflow-auto p-5 md:absolute md:inset-auto md:right-5 md:top-5 md:w-[min(420px,calc(100vw-40px))] md:max-h-none"
         >
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-warm-white">{selected.type}</p>
               <h2 className="mt-2 text-2xl font-normal lowercase tracking-[-0.02em]">{selected.title}</h2>
             </div>
-            <button className="pixel-frame border border-ember-line p-2 text-warm-white transition hover:bg-warm-white hover:text-near-black" onClick={() => setSelected(null)} aria-label="Close node detail">
+            <button
+              className="pixel-frame border border-ember-line p-2 text-warm-white transition hover:bg-warm-white hover:text-near-black"
+              onPointerDown={(event) => event.stopPropagation()}
+              onClick={(event) => {
+                event.stopPropagation();
+                setSelected(null);
+              }}
+              aria-label="Close node detail"
+            >
               <Glyph name="close" size="sm" />
             </button>
           </div>

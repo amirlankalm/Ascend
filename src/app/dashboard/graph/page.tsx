@@ -38,7 +38,7 @@ export default function GraphDashboardPage() {
           />
         </div>
       </div>
-      <div className="pointer-events-auto absolute bottom-5 left-5 z-20 flex gap-3 md:left-8">
+      <div className="pointer-events-auto absolute bottom-24 left-5 z-20 flex gap-3 md:bottom-5 md:left-8">
         <Button variant="ghost" onClick={() => setState(resetState())}>
           <Glyph name="scan" size="sm" />
           Reset demo

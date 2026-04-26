@@ -32,7 +32,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </header>
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 pb-20 md:pb-0">{children}</div>
     </main>
   );
 }

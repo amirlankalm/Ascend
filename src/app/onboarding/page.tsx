@@ -57,7 +57,7 @@ export default function OnboardingPage() {
             ))}
           </div>
         </div>
-        <motion.div key={step} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="terrain-panel pixel-frame pixel-border p-6 md:p-10">
+        <motion.div key={step} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="terrain-panel pixel-frame pixel-border p-6 md:p-10">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-warm-white">{steps[step]}</p>
           {step === 0 && (
             <div className="mt-5 grid gap-5">
@@ -92,23 +92,23 @@ export default function OnboardingPage() {
               <Textarea value={goal.constraints} onChange={(event) => setGoal({ ...goal, constraints: event.target.value })} placeholder="Constraints" />
             </div>
           )}
-          <div className="mt-8 flex justify-between">
-            <Button variant="ghost" onClick={() => setStep(Math.max(0, step - 1))} disabled={step === 0}>
-              Back
-            </Button>
-            {step < steps.length - 1 ? (
-              <Button onClick={() => setStep(step + 1)}>
-                Next
-                <Glyph name="arrow" size="sm" />
-              </Button>
-            ) : (
-              <Button onClick={generate} disabled={loading}>
-                {loading ? "Generating graph..." : "Generate path"}
-                <Glyph name="check" size="sm" />
-              </Button>
-            )}
-          </div>
         </motion.div>
+        <div className="fixed inset-x-5 bottom-4 z-50 flex justify-between border border-ember-line bg-surface p-3 md:sticky md:inset-auto md:bottom-0 md:mt-4 md:border-x-0 md:border-b-0 md:px-0 md:py-4">
+          <Button variant="ghost" onClick={() => setStep(Math.max(0, step - 1))} disabled={step === 0}>
+            Back
+          </Button>
+          {step < steps.length - 1 ? (
+            <Button onClick={() => setStep(step + 1)}>
+              Next
+              <Glyph name="arrow" size="sm" />
+            </Button>
+          ) : (
+            <Button onClick={generate} disabled={loading}>
+              {loading ? "Generating graph..." : "Generate path"}
+              <Glyph name="check" size="sm" />
+            </Button>
+          )}
+        </div>
       </section>
     </main>
   );
