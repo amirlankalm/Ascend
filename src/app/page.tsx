@@ -21,8 +21,25 @@ export default function Home() {
           </Link>
         </nav>
       </header>
-      <section className="relative z-10 flex min-h-[calc(100dvh-96px)] items-center justify-center px-6 py-28 text-center md:px-24 xl:px-[120px]">
-        <div className="mx-auto max-w-[700px]">
+      <section className="relative z-10 flex min-h-[calc(100dvh-96px)] items-center justify-center px-6 py-20 text-center md:px-24 xl:px-[120px]">
+        {/* mountain silhouette */}
+        <svg
+          viewBox="0 0 1440 220"
+          preserveAspectRatio="xMidYMax meet"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full select-none opacity-[0.07]"
+          aria-hidden
+        >
+          <path
+            d="M0,220 L0,160 L120,90 L240,140 L360,50 L480,120 L560,70 L660,130 L760,30 L880,110 L980,60 L1080,125 L1180,55 L1300,100 L1440,70 L1440,220 Z"
+            fill="currentColor"
+          />
+          <path
+            d="M0,220 L0,180 L180,130 L320,160 L440,100 L560,145 L700,90 L840,150 L960,95 L1100,140 L1260,100 L1440,130 L1440,220 Z"
+            fill="currentColor"
+            className="opacity-60"
+          />
+        </svg>
+        <div className="relative z-10 mx-auto max-w-[700px]">
           <div className="pixel-chip mb-10 inline-flex items-center gap-2 px-4 py-2 text-xs uppercase tracking-[0.18em] text-ash-muted">
             <Glyph name="ascend" size="sm" />
             ai-native digital social elevator

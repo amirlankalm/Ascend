@@ -185,6 +185,12 @@ h6 {
   animation: edge-flow 1.8s steps(8) infinite;
 }
 
+.react-flow,
+.react-flow__renderer,
+.react-flow__container {
+  background: var(--background) !important;
+}
+
 .react-flow__attribution {
   display: none;
 }
