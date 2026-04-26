@@ -1,79 +1,93 @@
 # Ascend Design System
 
 ## 1. Visual Philosophy
-Ascend is a frontier operating system for student ambition. It should feel like an expedition map from an AI lab: cinematic orange atmosphere, dark mountain silhouettes, precise interface surfaces, and graph nodes that feel like future unlocks rather than school tasks. The product avoids classroom dashboards, cute gamification, and generic SaaS cards.
+Ascend is a developer-centric career operating system for high school execution. The interface should feel like a serious technical instrument: part terminal, part tactical graph debugger, part proof ledger.
+
+The design is intentionally strict:
+- No gradients.
+- No soft drop shadows.
+- No glassmorphism.
+- No vibrant accent colors.
+- No rounded consumer UI.
+- No standard sans-serif typography.
+
+Hierarchy comes from contrast, grayscale values, visible grid structure, generous spacing, typographic scale, and pixel-level marks.
 
 ## 2. Layout System
-- Desktop shell: 96-120px horizontal page padding for public pages, 20-28px for app workspaces.
-- Navigation: 88px tall, positioned roughly 40-50px from top on cinematic screens.
-- Landing hero: almost full viewport with content beginning near 200px from left and headline around 330px from top on a 2048x1040 reference.
-- Dashboard: spatial canvas first. Graph occupies nearly the whole screen; side panels are overlays, not boxed page sections.
-- Content max widths: 760px for hero copy, 1120px for structured forms, full bleed for graph.
+- Public hero pages are centered, focused, and quiet with 120px+ vertical padding.
+- Reading columns are constrained to 650-700px.
+- App workspaces use a top navigation rail and full-screen spatial canvases.
+- Graph screens prioritize the map; text overlays are compact and pointer-safe.
+- Detail views use rigid two-column layouts on desktop and single-column stacks on mobile.
+- Distinct functional zones are separated with 1px borders and 32-48px gaps.
 
 ## 3. Color Tokens
-- `sun-orange`: `#F5A400`
-- `core-orange`: `#F08A00`
-- `hot-orange`: `#FF6A00`
-- `deep-orange`: `#D84A00`
-- `burnt-orange`: `#8A2A00`
-- `mountain-dark`: `#3A1306`
-- `near-black`: `#070707`
-- `warm-white`: `#FFF7EA`
-- `glass-white`: `rgba(255,255,255,0.10)`
-- `ember-line`: `rgba(255,196,112,0.36)`
-- `ash-muted`: `rgba(255,247,234,0.64)`
+- `background`: `#0A0A0A`
+- `surface`: `#161616`
+- `surface-2`: `#1A1A1A`
+- `surface-3`: `#111111`
+- `foreground`: `#EDEDED`
+- `primary`: `#F5F5F5`
+- `secondary`: `#A1A1AA`
+- `tertiary`: `#525252`
+- `border`: `#333333`
+- `border-soft`: `#2A2A2A`
+- `inverse`: `#0A0A0A`
+
+Legacy token names such as `sun-orange`, `warm-white`, and `ember-line` are mapped to monochrome values in `globals.css` so existing components stay stable while the visual language changes.
 
 ## 4. Typography Scale
-- Font: Geist Sans for all interface text, Geist Mono for IDs, scores, XP, and compact telemetry.
-- Display desktop: 88-104px, line-height 1.0.
-- Display tablet: 64-76px.
-- Display mobile: 44-56px.
-- Subtitle desktop: 28-34px.
-- Section title: 28-40px.
-- Body: 16px.
-- Caption: 12-13px.
-- Letter spacing: 0.
+- Font: Geist Mono everywhere.
+- Display desktop: `clamp(3rem, 7vw, 6.7rem)`.
+- Display mobile: `clamp(3rem, 12vw, 4.2rem)`.
+- Hero and page headings are lowercase, weight 400, line-height 0.95-1.0, letter-spacing `-0.02em`.
+- Body copy is weight 400, size 16px, line-height 1.6, color `secondary`.
+- Metadata labels are uppercase, 10-12px, letter-spacing 0.16-0.24em.
+- Numbers use tabular figures.
 
 ## 5. Spacing Scale
-- 4, 8, 12, 16, 20, 24, 32, 40, 56, 72, 96, 120.
-- Dense product controls use 8-16px gaps.
-- Cinematic pages use 40-96px gaps and large empty fields.
+- Base units: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 96, 120.
+- Dense telemetry controls use 8-16px internal rhythm.
+- Major sections use 32-48px gaps.
+- Hero and onboarding moments use large vertical space to force focus.
 
 ## 6. Component Specs
-- `MountainHero`: full viewport orange radial + linear gradient, SVG/CSS layered mountains in the bottom half, huge white type, underlined minimal CTAs.
-- `AppShell`: dark expedition map surface with top nav, compact progress/XP telemetry, persistent section navigation.
-- `GlassPanel`: translucent dark-orange surface with 1px ember border and restrained blur.
-- `QuestCard`: mission brief layout with XP, time, difficulty, rubric, and one primary action.
-- `ProofScoreCard`: compact score tile with animated validation flash.
-- `PortfolioCard`: artifact-style document panel with copyable CV bullet.
-- `GrantCard`: opportunity panel that reads like a radar hit, with deadline and next action.
+- `AppShell`: monochrome grid substrate, top nav, pixel glyph logo, search block, XP telemetry.
+- `Button`: primary is white background with black text; secondary is transparent with a 1px gray border.
+- `Input` / `Textarea`: `#161616` background, `#333333` border, square corners.
+- `EngineStrip`: bordered telemetry strip with three rigid cells.
+- `PathGraph`: full-screen graph canvas with flat nodes, dashed animated edges, and monochrome status.
+- `CustomGraphNode`: square proof/quest/skill node with 1px border, mono metadata, and no glow.
+- `ProofWorkbench`: validation bay with preflight checks, progress bars, and portfolio output.
+- `PortfolioCard`: document-like artifact panel with copyable CV bullet.
+- `GrantCard`: opportunity record with match score, deadline, missing proof, and next action.
 
 ## 7. Graph Node Design
-- Goal nodes: large warm-white core with orange corona.
-- Skill nodes: angular dark panels with amber outline.
-- Quest nodes: active mission beacons with pulsing edge glow when available.
-- Proof nodes: artifact/document shape with folded-corner visual.
-- Portfolio nodes: polished ivory document nodes.
-- Grant/opportunity nodes: treasure/radar nodes in gold-orange.
-- Locked nodes: dim, low saturation, dashed border.
-- Completed nodes: warm white check mark and stable glow.
+- Locked nodes: `surface-3`, low opacity, grayscale, lock glyph.
+- Available nodes: `surface-2`, white border, active but not colorful.
+- In-progress nodes: white border, solid technical surface.
+- Completed nodes: inverted white surface with black text.
+- Quest nodes and proof nodes use pixel glyphs instead of generic icon libraries.
+- Edges use grayscale dashed strokes; funding edges are brighter than dependency edges.
 
 ## 8. Motion System
-- Page transitions: opacity + 12px y movement, 220-360ms.
-- Hero gradient: slow 18-24s background-position drift.
-- Mountain parallax: subtle translate transforms by layer.
-- Graph edge flow: animated stroke dash offset.
-- Active node pulse: low-frequency orange halo.
-- Unlock pop: scale 0.92 to 1 with opacity and glow flash.
-- Proof validation: staged loading text: analyzing proof, extracting skills, updating graph, generating portfolio.
+- Motion is mechanical, not cinematic.
+- Page and panel transitions use opacity plus small y/x offsets.
+- Graph edges animate with stepped dash movement.
+- Radar scan is a single hard white line rotating inside a square field.
+- Button active state moves 1px down.
+- Loading states progress through explicit text: analyzing proof, extracting skills, updating graph, generating portfolio.
 
 ## 9. Responsive Behavior
-- Mobile landing keeps the hero first and preserves mountain depth; type clamps to 44-56px.
-- Dashboard switches to a top graph with bottom/detail panels; no critical graph controls are hidden.
-- Forms become single column and keep action buttons visible without overlap.
-- Fixed-format elements such as node cards, toolbar buttons, and score tiles use stable dimensions.
+- Top nav remains the primary shell; crowded right-side telemetry can hide on smaller widths.
+- Graph panels use fixed node dimensions so labels and handles do not shift layout.
+- Quest, proof, portfolio, and radar pages collapse to one column below desktop.
+- Text blocks keep readable max widths and avoid full-width paragraphs.
+- Controls never depend on hover alone; focus states use a 1px white outline.
 
 ## 10. Tailwind Token Mapping
-- CSS variables live in `globals.css` and are exposed through Tailwind v4 `@theme inline`.
-- Use classes like `bg-background`, `text-foreground`, `text-warm-white`, `border-ember-line`, and custom utility classes for mountain gradients.
-- Avoid one-note orange blocks by pairing warm orange atmosphere with near-black, ivory document surfaces, amber outlines, and muted ash text.
+- Tailwind v4 tokens live in `src/app/globals.css` under `@theme inline`.
+- Use `bg-background`, `bg-surface`, `text-warm-white`, `text-ash-muted`, and `border-ember-line`.
+- Avoid new color tokens unless they are grayscale.
+- Do not add gradients, shadows, blur, or rounded corners.
+- Preserve pixel glyphs, SVG-pattern grid backgrounds, and notched square frames for the custom Ascend identity.
